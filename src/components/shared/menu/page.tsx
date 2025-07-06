@@ -53,8 +53,13 @@ const Page = () => {
   );
 
   useEffect(() => {
-    menuOpen ? tl.current?.play() : tl.current?.reverse();
-  }, [menuOpen]);
+  if (!tl.current) return;            // fine – this *is* a statement
+  if (menuOpen) {
+    tl.current.play();               // explicit call – linter happy
+  } else {
+    tl.current.reverse();
+  }
+}, [menuOpen]);
 
   return (
     <div ref={container}>
