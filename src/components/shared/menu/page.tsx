@@ -67,35 +67,29 @@ const Page = () => {
   return (
     <div ref={container}>
       {/* Top Menu Bar */}
-      <div className="menu-bar fixed top-0 left-0 w-full p-8 flex justify-between items-center z-30">
-        <div className="menu-logo text-2xl font-semibold">
+      <div className="menu-bar fixed top-0 left-0 w-full p-8 flex justify-between items-center z-10">
+        <div className="menu-logo text-4xl font-semibold">
           <Link href="/">Ashish</Link>
         </div>
         <div className="menu-open cursor-pointer" onClick={toggleMenu}>
-          <p className="text-black">Menu</p>
+       <p className="text-black">Menu</p>
         </div>
       </div>
 
       {/* Overlay Menu */}
       <div
-        className="menu-overlay fixed top-0 left-0 w-full h-full bg-[#c5fb45] p-8 flex justify-between z-50
-        [clip-path:polygon(0_0,0_0,0_0,0_0)] pointer-events-none"
+        className="menu-overlay fixed top-0 left-0 w-full h-full bg-[#c5fb45] p-8 flex items-center justify-between
+        [clip-path:polygon(0_0,0_0,0_0,0_0)] pointer-events-none "
       >
         {/* Left Section */}
         <div className="flex flex-col justify-between h-full">
           <div className="menu-overlay-bar">
             <div className="menu-logo text-4xl font-semibold">Ashish</div>
-            <div
-              className="menu-close mt-4 cursor-pointer"
-              onClick={toggleMenu}
-            >
-              <p className="text-white">Close</p>
-            </div>
           </div>
         </div>
 
         {/* Center Section */}
-        <div className="flex flex-col justify-between h-full flex-grow px-8">
+        <div className="flex flex-col justify-between h-full flex-grow md:px-8">
           {/* Links */}
           <div className="menulinks flex flex-col gap-4 mt-20">
             {paths.map((R, i) => (
@@ -103,7 +97,7 @@ const Page = () => {
                 <div className="menu-item-holder relative" onClick={toggleMenu}>
                   <Link
                     href={R.path}
-                    className="menu-links text-black text-7xl font-light hover:text-white transition-all duration-500"
+                    className="menu-links text-black text-5xl md:text-7xl font-light hover:text-white transition-all duration-500"
                   >
                     {R.name}
                   </Link>
