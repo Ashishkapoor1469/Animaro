@@ -78,11 +78,11 @@ const Page = () => {
 
       {/* Overlay Menu */}
       <div
-        className="menu-overlay fixed top-0 left-0 w-full h-full bg-[#c5fb45] p-8 flex items-center justify-between
+        className="menu-overlay fixed top-0 left-0 w-full h-full bg-[#d7fb45] p-8 flex items-center justify-between
         [clip-path:polygon(0_0,0_0,0_0,0_0)] pointer-events-none "
       >
         {/* Left Section */}
-        <div className="flex flex-col justify-between h-full">
+        <div className=" hidden md:flex flex-col justify-between h-full">
           <div className="menu-overlay-bar">
             <div className="menu-logo text-4xl font-semibold">Ashish</div>
           </div>
