@@ -24,9 +24,12 @@ const Page = () => {
 
       tl.current = gsap.timeline({
         paused: true,
-        onStart: () => gsap.set(".menu-overlay", { pointerEvents: "auto" }),
-        onReverseComplete: () =>
-          gsap.set(".menu-overlay", { pointerEvents: "none" }),
+        onStart: () => {
+          void gsap.set(".menu-overlay", { pointerEvents: "auto" });
+        },
+        onReverseComplete: () => {
+          void gsap.set(".menu-overlay", { pointerEvents: "none" });
+        },
       });
 
       tl.current
@@ -53,13 +56,13 @@ const Page = () => {
   );
 
   useEffect(() => {
-  if (!tl.current) return;            // fine – this *is* a statement
-  if (menuOpen) {
-    tl.current.play();               // explicit call – linter happy
-  } else {
-    tl.current.reverse();
-  }
-}, [menuOpen]);
+    if (!tl.current) return; // fine – this *is* a statement
+    if (menuOpen) {
+      tl.current.play(); // explicit call – linter happy
+    } else {
+      tl.current.reverse();
+    }
+  }, [menuOpen]);
 
   return (
     <div ref={container}>
@@ -82,7 +85,10 @@ const Page = () => {
         <div className="flex flex-col justify-between h-full">
           <div className="menu-overlay-bar">
             <div className="menu-logo text-4xl font-semibold">Ashish</div>
-            <div className="menu-close mt-4 cursor-pointer" onClick={toggleMenu}>
+            <div
+              className="menu-close mt-4 cursor-pointer"
+              onClick={toggleMenu}
+            >
               <p className="text-white">Close</p>
             </div>
           </div>
@@ -110,7 +116,9 @@ const Page = () => {
           <div className="menuinfo flex flex-wrap justify-between gap-6 mt-20">
             <div className="menu-info-col">
               <p>
-                <span className="menu-info-title font-semibold">Ashish Kumar</span>
+                <span className="menu-info-title font-semibold">
+                  Ashish Kumar
+                </span>
                 <br />
                 <span className="menu-info-subtitle">Full Stack Developer</span>
               </p>
