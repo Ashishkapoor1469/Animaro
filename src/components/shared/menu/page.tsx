@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { Button } from "@/components/ui/button";
 
 const Page = () => {
   const paths = [
@@ -41,11 +42,10 @@ const Page = () => {
         .to(
           ".menu-link-item",
           {
-            duration: 1,
+            duration: 1.2,
             y: 0,
             stagger: 0.1,
             ease: "power4.inOut",
-            delay: -0.75,
           },
           "<"
         );
@@ -67,37 +67,30 @@ const Page = () => {
   return (
     <div ref={container}>
       {/* Top Menu Bar */}
-      <div className="menu-bar fixed top-0 left-0 w-full p-8 flex justify-between items-center z-10">
+      <div className="menu-bar fixed top-0 left-0 w-full p-8 flex justify-between items-center z-20">
         <div className="menu-logo text-4xl font-semibold">
           <Link href="/">Ashish</Link>
         </div>
         <div className="menu-open cursor-pointer" onClick={toggleMenu}>
-       <p className="text-black">Menu</p>
+       <Button className="hover:scale-105" variant={"secondary"}>Menu</Button>
         </div>
       </div>
 
       {/* Overlay Menu */}
       <div
-        className="menu-overlay fixed top-0 left-0 w-full h-full bg-[#d7fb45] p-8 flex items-center justify-between
-        [clip-path:polygon(0_0,0_0,0_0,0_0)] pointer-events-none "
+        className="menu-overlay fixed top-0 left-0 w-full h-full bg-[#86b99c] flex flex-wrap items-center justify-between px-8 md:px-16 py-8
+        [clip-path:polygon(0_0,0_0,0_0,0_0)] pointer-events-none z-10"
       >
-        {/* Left Section */}
-        <div className=" hidden md:flex flex-col justify-between h-full">
-          <div className="menu-overlay-bar">
-            <div className="menu-logo text-4xl font-semibold">Ashish</div>
-          </div>
-        </div>
-
         {/* Center Section */}
-        <div className="flex flex-col justify-between h-full flex-grow md:px-8">
+        <div className="menu flex flex-col h-full justify-evenly items-center">
           {/* Links */}
-          <div className="menulinks flex flex-col gap-4 mt-20">
+          <div className="menulinks flex flex-col gap-2">
             {paths.map((R, i) => (
-              <div className="menu-link-item w-max translate-y-[75px]" key={i}>
-                <div className="menu-item-holder relative" onClick={toggleMenu}>
+              <div className="menu-link-item " key={i}>
+                <div className="menu-item-holder" onClick={toggleMenu}>
                   <Link
                     href={R.path}
-                    className="menu-links text-black text-5xl md:text-7xl font-light hover:text-white transition-all duration-500"
+                    className="menu-links text-black text-5xl md:text-7xl  font-thin hover:text-white transition-all duration-500"
                   >
                     {R.name}
                   </Link>
@@ -107,10 +100,10 @@ const Page = () => {
           </div>
 
           {/* Info */}
-          <div className="menuinfo flex flex-wrap justify-between gap-6 mt-20">
+          <div className="menuinfo flex flex-col ">
             <div className="menu-info-col">
               <p>
-                <span className="menu-info-title font-semibold">
+                <span className="menu-info-title">
                   Ashish Kumar
                 </span>
                 <br />
@@ -119,7 +112,7 @@ const Page = () => {
             </div>
             <div className="menu-info-col">
               <p>
-                <span className="menu-info-title font-semibold">Contact</span>
+                <span className="menu-info-title">Contact</span>
                 <br />
                 <span className="menu-info-subtitle">
                   Email:{" "}
@@ -136,7 +129,7 @@ const Page = () => {
         </div>
 
         {/* Right Preview Area */}
-        <div className="menu-preview flex items-end justify-end px-6">
+        <div className="menu-preview w-auto h-full justify-center items-center flex">
           <p className="text-black text-lg font-medium">View preview</p>
         </div>
       </div>
