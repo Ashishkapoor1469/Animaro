@@ -1,4 +1,5 @@
-  import RotatingText from "@/components/reactbits/rotateingtext";
+  import CircularText from "@/components/reactbits/circulartext";
+import RotatingText from "@/components/reactbits/rotateingtext";
 export default function Home() {
   return (
     <>
@@ -18,6 +19,15 @@ export default function Home() {
   rotationInterval={2000}
 />
   </div>
+  <div className="flex w-62 h-62 justify-center items-center">
+    <CircularText
+  text="REACT*BITS*COMPONENTS*"
+  onHover="speedUp"
+  spinDuration={20}
+  className="custom-class text-xs w-full h-full bg-black"
+/>
+  </div>
+
 
     </>
   );
