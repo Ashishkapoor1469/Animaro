@@ -21,7 +21,7 @@ const Page = () => {
 
   useGSAP(
     () => {
-      gsap.set(".menu-link-item", { y: 75 });
+      gsap.set(".menu-link-item", { y: 95 });
 
       tl.current = gsap.timeline({
         paused: true,
