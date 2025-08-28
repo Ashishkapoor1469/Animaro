@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Menu from "@/components/shared/menu/page";
 import localFont from "next/font/local";
-export const font1 = localFont({
+const font1 = localFont({
   src:"../font/1.ttf"
 })
 export const metadata: Metadata = {
