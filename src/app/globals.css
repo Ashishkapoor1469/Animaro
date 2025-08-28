@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Lacquer&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Moo+Lah+Lah&family=Permanent+Marker&family=Rubik+Glitch&family=Trade+Winds&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
-
 @custom-variant dark (&:is(.dark *));
+
+
+
 
 @theme inline {
   --color-background: var(--background);
@@ -119,4 +122,49 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+
+
+.montserrat-1 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+.edu-nsw-act-cursive-1 {
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.permanent-marker-regular-1 {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lacquer-regular-1 {
+  font-family: "Lacquer", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.moo-lah-lah-regular-1 {
+  font-family: "Moo Lah Lah", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.rubik-glitch-regular-1 {
+  font-family: "Rubik Glitch", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.trade-winds-regular-1 {
+  font-family: "Trade Winds", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
